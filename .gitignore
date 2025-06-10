@@ -1,0 +1,14 @@
+# Fichiers temporaires PHP
+*.tmp
+*.log
+/server/data/sessions.json
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+error.log
+access.log
