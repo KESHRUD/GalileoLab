@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GalileoLab - Studio Collaboratif</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="gradient-background"></div>
+    <div class="nebula-background"></div>
+    <div class="star-background"></div>
+    <div class="container">
+        <header class="slide-in-up">
+            <h1>GalileoLab</h1>
+            <div class="header-right-content">
+                <p class="subtitle">Studio de dessin collaboratif en temps réel</p>
+                <p class="tagline">Créez, partagez, et collaborez sur vos œuvres d'art numériques, ensemble.</p>
+            </div>
+        </header>
+
+        <main role="main">
+            <section class="hero-content">
+                <div class="hero-left">
+                    <div class="hero-text">
+                        <h2 class="keyboard-text">Votre toile, vos règles, partout.</h2>
+                        <p class="keyboard-text">GalileoLab est la plateforme idéale pour libérer votre créativité et collaborer en temps réel avec d'autres artistes du monde entier.</p>
+                    </div>
+                    <div class="session-controls">
+                        <button id="createSessionHero" class="btn btn-primary">
+                            <i class="fas fa-plus"></i> Créer une session
+                        </button>
+                        <div class="join-session">
+                            <input type="text" id="sessionCode" placeholder="Entrez le code de session" maxlength="6" aria-label="Code de session">
+                            <button id="joinSession" class="btn btn-secondary">
+                                <i class="fas fa-sign-in-alt"></i> Rejoindre
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-container slide-in-up">
+                    <div class="map" aria-label="Collaborative drawing map">
+                        <canvas id="mapCanvas"></canvas>
+                        <div class="active-users">
+                            <i class="fas fa-users"></i>
+                            <span id="activeUsersCount">3</span> utilisateurs actifs
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features/How it Works Section -->
+            <section class="features-section">
+                <h2 class="section-title">Comment ça marche ?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">⚡</span>
+                        <h3>Initialisation de la session</h3>
+                        <p>Commencez en créant une nouvelle session unique ou rejoignez-en une existante avec un code. C'est votre portail vers la collaboration créative.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🔗</span>
+                        <h3>Connexion en temps réel</h3>
+                        <p>Une fois connecté, rejoignez la toile partagée via WebSocket. Chaque coup de pinceau est instantanément visible par tous les participants.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">💡</span>
+                        <h3>Exploration des outils</h3>
+                        <p>Accédez à une suite d'outils de dessin intuitifs : pinceaux de différentes tailles, une palette de couleurs vibrantes et une gomme pour affiner vos créations.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">📡</span>
+                        <h3>Collaboration et partage</h3>
+                        <p>Partagez facilement votre code de session pour inviter d'autres utilisateurs. Dessinez en direct, observez les créations des autres et construisez ensemble.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div id="notificationContainer" class="notification-container">
+            <div id="successChip" class="notification-chip success-chip" role="status" aria-live="polite">
+                <span class="icon">✔</span> <span class="message"></span>
+            </div>
+            <div id="errorChip" class="notification-chip error-chip" role="alert" aria-live="assertive">
+                <span class="icon">✖</span> <span class="message"></span>
+            </div>
+        </div>
+
+        <div id="userModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>Choisissez votre nom</h2>
+                <input type="text" id="username" placeholder="Votre nom" maxlength="20" aria-label="Votre nom d'utilisateur">
+                <button id="confirmUsername" class="btn primary">Confirmer</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2024 GalileoLab. Tous droits réservés.</p>
+    </footer>
+
+    <script src="js/landing.js"></script>
+</body>
+</html> 

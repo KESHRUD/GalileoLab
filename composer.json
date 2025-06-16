@@ -1,0 +1,23 @@
+{
+    "name": "galileolab/drawing-app",
+    "description": "Application de dessin collaboratif en temps réel",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "cboden/ratchet": "^0.4.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "GalileoLab\\": "php/"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "php -r \"if (!file_exists('logs')) mkdir('logs', 0777, true);\"",
+            "php -r \"if (!file_exists('logs/sessions.json')) file_put_contents('logs/sessions.json', json_encode(['sessions' => []], JSON_PRETTY_PRINT));\"",
+            "php -r \"if (!file_exists('logs/connections.json')) file_put_contents('logs/connections.json', json_encode(['connections' => []], JSON_PRETTY_PRINT));\"",
+            "php -r \"if (!file_exists('logs/errors.json')) file_put_contents('logs/errors.json', json_encode(['errors' => []], JSON_PRETTY_PRINT));\"",
+            "php -r \"if (!file_exists('logs/drawings.json')) file_put_contents('logs/drawings.json', json_encode(['drawings' => []], JSON_PRETTY_PRINT));\""
+        ]
+    }
+} 

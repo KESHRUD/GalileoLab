@@ -1,0 +1,57 @@
+# Fichiers spécifiques au projet
+PROF.md
+.env
+.env.*
+!.env.example
+
+# Dossiers de dépendances
+/vendor/
+/node_modules/
+
+# Fichiers de logs
+/logs/*
+!logs/.gitkeep
+
+# Fichiers de cache
+*.cache
+*.log
+*.tmp
+
+# Fichiers de configuration locaux
+config.local.php
+config.dev.php
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Fichiers d'IDE et éditeurs
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# Fichiers de build et de déploiement
+/build/
+/dist/
+/deploy/
+
+# Fichiers de test et de couverture
+/coverage/
+/tests/coverage/
+.phpunit.result.cache
+
+# Fichiers de sauvegarde
+*.bak
+*.backup
+*~
+
+# Fichiers de session PHP
+sessions/
+*.session
+
+# Fichiers de cache PHP
+*.cache.php 

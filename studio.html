@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GalileoLab Studio</title>
+    <link rel="stylesheet" href="css/studio.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="studio-header">
+        <div class="header-left">
+            <h1>GalileoLab Studio</h1>
+            <div class="chip session-code">
+                <span class="icon">🔑</span>
+                <span id="sessionCode">Session: </span>
+            </div>
+        </div>
+        <div class="header-right">
+            <button class="tool-btn" data-tool="save" title="Enregistrer">
+                <i class="icon">💾</i>
+            </button>
+            <button class="tool-btn" data-tool="clear" title="Effacer">
+                <i class="icon">🗑️</i>
+            </button>
+        </div>
+    </header>
+
+    <div class="studio-container">
+        <!-- Barre d'outils verticale -->
+        <div class="toolbar">
+            <!-- Outils de dessin -->
+            <div class="tool-group">
+                <button class="tool-btn active" data-tool="brush" title="Pinceau">
+                    <i class="icon">🖌️</i>
+                </button>
+                <button class="tool-btn" data-tool="pencil" title="Crayon">
+                    <i class="icon">✏️</i>
+                </button>
+                <button class="tool-btn" data-tool="eraser" title="Gomme">
+                    <i class="icon">🧹</i>
+                </button>
+                <button class="tool-btn" data-tool="spray" title="Aérographe">
+                    <i class="icon">🎨</i>
+                </button>
+            </div>
+
+            <!-- Formes -->
+            <div class="tool-group">
+                <button class="tool-btn" data-tool="line" title="Ligne">
+                    <i class="icon">📏</i>
+                </button>
+                <button class="tool-btn" data-tool="rectangle" title="Rectangle">
+                    <i class="icon">⬜</i>
+                </button>
+                <button class="tool-btn" data-tool="circle" title="Cercle">
+                    <i class="icon">⭕</i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Zone de dessin -->
+        <div class="canvas-container">
+            <canvas id="drawingCanvas"></canvas>
+        </div>
+
+        <!-- Panneau latéral -->
+        <div class="sidebar">
+            <!-- Contrôles de couleur -->
+            <div class="color-controls">
+                <button class="color-btn active" data-color="#000000" style="background-color: #000000;"></button>
+                <button class="color-btn" data-color="#e7587e" style="background-color: #e7587e;"></button>
+                <button class="color-btn" data-color="#ff6b00" style="background-color: #ff6b00;"></button>
+                <button class="color-btn" data-color="#ffffff" style="background-color: #ffffff;"></button>
+                <button class="color-btn" data-color="#ff0000" style="background-color: #ff0000;"></button>
+                <button class="color-btn" data-color="#00ff00" style="background-color: #00ff00;"></button>
+                <button class="color-btn" data-color="#0000ff" style="background-color: #0000ff;"></button>
+                <button class="color-btn" data-color="#ffff00" style="background-color: #ffff00;"></button>
+            </div>
+
+            <!-- Contrôle de l'épaisseur -->
+            <div class="brush-size-control">
+                <label for="brushSize">Épaisseur du trait</label>
+                <input type="range" id="brushSize" min="1" max="50" value="5">
+                <span id="brushSizeValue">5px</span>
+            </div>
+
+            <!-- Liste des utilisateurs -->
+            <div class="users-section">
+                <h3>Utilisateurs connectés</h3>
+                <div id="usersChips" class="users-chips">
+                    <!-- Les chips des utilisateurs seront ajoutés ici dynamiquement -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/studio.js"></script>
+</body>
+</html> 
